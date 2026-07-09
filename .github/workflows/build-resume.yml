@@ -13,21 +13,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Compile LaTeX
-        id: compile
-        continue-on-error: true
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
           latexmk_use_xelatex: true
-          args: "-interaction=nonstopmode -file-line-error"
-
-      - name: Show log
-        if: always()
-        run: cat resume.log || true
-
-      - name: Fail on error
-        if: steps.compile.outcome != 'success'
-        run: exit 1
 
       - name: Rename PDF
         run: mv resume.pdf caleb_cunningham_resume.pdf
