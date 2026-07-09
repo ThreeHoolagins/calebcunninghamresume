@@ -96,18 +96,18 @@
 \newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
 \fontdir
 
-\newfontfamily\sourcesanspro{SourceSansPro-Regular.otf}[
+\newfontfamily\sourcesanspro[
   Path=\@fontdir,
-  UprightFont = *-Regular,
-  BoldFont = *-Bold,
-  ItalicFont = *-It,
-  BoldItalicFont = *-BoldIt
-]
-\newfontfamily\sourcesansprolight{SourceSansPro-Light.otf}[
+  UprightFont=*-Regular,
+  BoldFont=*-Bold,
+  ItalicFont=*-It,
+  BoldItalicFont=*-BoldIt
+]{SourceSansPro}
+\newfontfamily\sourcesansprolight[
   Path=\@fontdir,
-  UprightFont = *-Light,
-  ItalicFont = *-LightIt
-]
+  UprightFont=*-Light,
+  ItalicFont=*-LightIt
+]{SourceSansPro}
 
 
 %-------------------------------------------------------------------------------
