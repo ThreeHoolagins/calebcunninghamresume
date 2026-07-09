@@ -17,6 +17,7 @@ jobs:
         with:
           root_file: resume.tex
           latexmk_use_xelatex: true
+          texlive_version: 2025
 
       - name: Rename PDF
         run: mv resume.pdf caleb_cunningham_resume.pdf
