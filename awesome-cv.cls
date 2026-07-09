@@ -75,7 +75,18 @@
 % Needed to use icons from font-awesome
 % (https://github.com/posquit0/latex-fontawesome)
 \RequirePackage{fontawesome}
-\RequirePackage[default,opentype]{sourcesanspro}
+\newfontfamily\sourcesanspro{SourceSansPro-Regular.otf}[
+  Path=\@fontdir,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-It,
+  BoldItalicFont = *-BoldIt
+]
+\newfontfamily\sourcesansprolight{SourceSansPro-Light.otf}[
+  Path=\@fontdir,
+  UprightFont = *-Light,
+  ItalicFont = *-LightIt
+]
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
@@ -596,7 +607,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
-  \vspace{0.5mm}
+  \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
