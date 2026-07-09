@@ -1,0 +1,36 @@
+name: Build and Release Resume
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+          latexmk_use_xelatex: true
+
+      - name: Get next version
+        id: version
+        run: |
+          latest=$(gh release list --repo ${{ github.repository }} --limit 1 \
+            --json tagName --jq '.[0].tagName' 2>/dev/null || echo "v0")
+          num=${latest#v}
+          echo "tag=v$((num + 1))" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: Resume ${{ steps.version.outputs.tag }}
+          files: resume.pdf
