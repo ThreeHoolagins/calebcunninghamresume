@@ -75,18 +75,6 @@
 % Needed to use icons from font-awesome
 % (https://github.com/posquit0/latex-fontawesome)
 \RequirePackage{fontawesome}
-\newfontfamily\sourcesanspro{SourceSansPro-Regular.otf}[
-  Path=\@fontdir,
-  UprightFont = *-Regular,
-  BoldFont = *-Bold,
-  ItalicFont = *-It,
-  BoldItalicFont = *-BoldIt
-]
-\newfontfamily\sourcesansprolight{SourceSansPro-Light.otf}[
-  Path=\@fontdir,
-  UprightFont = *-Light,
-  ItalicFont = *-LightIt
-]
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
@@ -107,6 +95,19 @@
 % Configure a directory location for fonts(default: 'fonts/')
 \newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
 \fontdir
+
+\newfontfamily\sourcesanspro{SourceSansPro-Regular.otf}[
+  Path=\@fontdir,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-It,
+  BoldItalicFont = *-BoldIt
+]
+\newfontfamily\sourcesansprolight{SourceSansPro-Light.otf}[
+  Path=\@fontdir,
+  UprightFont = *-Light,
+  ItalicFont = *-LightIt
+]
 
 
 %-------------------------------------------------------------------------------
