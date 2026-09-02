@@ -18,9 +18,12 @@ jobs:
             -o /usr/local/bin/localleaf
           chmod +x /usr/local/bin/localleaf
 
+      - name: Disable podman to avoid registry-selection prompt in CI
+        run: sudo mv /usr/bin/podman /usr/bin/podman.disabled || true
+
       - name: Compile LaTeX with localleaf
         run: |
-          script -qec "localleaf . -m resume.tex -e xelatex -1 -- --outdir=build/" /dev/null
+          script -qec "localleaf -m resume.tex -e xelatex -i docker.io/loiccoyle/localleaf:latest -1 . -- --outdir=build/" /dev/null
 
       - name: Rename PDF
         run: mv build/resume.pdf caleb_cunningham_resume.pdf

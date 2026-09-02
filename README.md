@@ -25,13 +25,13 @@ All previous releases remain accessible from the [Releases page](https://github.
 Build once (outputs to `build/`):
 
 ```bash
-localleaf . -m resume.tex -e xelatex -1 -- --outdir=build/
+localleaf -m resume.tex -e xelatex -1 . -- --outdir=build/
 ```
 
 Or watch for changes and rebuild automatically:
 
 ```bash
-localleaf . -m resume.tex -e xelatex -- --outdir=build/
+localleaf -m resume.tex -e xelatex . -- --outdir=build/
 ```
 
 Requires [Docker](https://www.docker.com/) and the `localleaf` script (see its [README](https://github.com/loiccoyle/localleaf) for installation).
