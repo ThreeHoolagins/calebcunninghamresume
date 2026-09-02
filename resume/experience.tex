@@ -6,103 +6,22 @@
 
 %-------------------------------------------------------------------------------
 %	CONTENT
+% Each entry lives in resume/experience/ as its own file. Reorder or toggle
+% entries by moving/commenting the \input lines below.
+% NOTE: the trailing "%" after each \input and the blank-line layout MUST be
+% preserved, or inter-entry spacing will change.
 %-------------------------------------------------------------------------------
 \begin{cventries}
-%---------------------------------------------------------
-  \cventry
-    {Software Engineer II} % Job title
-    {Checkr} % Organization
-    {Denver, CO} % Location
-    {Feb 2026 - July 2026} % Date(s)
-    {
-        \begin{cvitems}
-            \item{Streamlined account-setting logic by deprecating old settings. This reduced setting-specific support volume by ~68\% over 6 months.}
-            \item{Upgraded Rails microservice from Rails 6 (End-of-Life) to Rails 8.1, resolving critical EOL vulnerabilities and ensuring the latest security patches, with zero downtime.}
-            \item{Ensured system reliability of shadow mode by setting up Datadog monitors and dashboards to ensure new changes did not break old functionality.}
-        \end{cvitems}
-    }
-%---------------------------------------------------------
-  \cventry
-    {Software Engineer I} % Job title
-    {Angi} % Organization
-    {United States, Remote} % Location
-    {Apr 2025 - Jan 2026} % Date(s)
-    {
-        \begin{cvitems}
-            \item{Created Kafka Confluent Consumer for Event Driven Architecture in preparation for complete user migration to new platform.}
-            \item{Actively contributed to bug fixes and feature development across 4 tech stacks including new JCN apps in java and spring boot, old JCN apps, Scala apps, and Sprint Boot apps with Kotlin across several microservices.}
-        \end{cvitems}
-    }
+\input{resume/experience/checkr}%
+\input{resume/experience/angi}%
 
-%---------------------------------------------------------
-  \cventry
-    {Senior Software Developer} % Job title
-    {Paycom} % Organization
-    {Oklahoma City, OK} % Location
-    {Mar 2025 - Apr 2025} % Date(s)
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item{Mentored junior developers, guiding them on code solutions and achieving personal metrics.}
-        \item{Analyzed complex project specifications to break down tasks effectively, ensuring timely project releases.}
-        \item {Conducted in-depth research on client-affecting bugs, resolving them within an 8-hour SLA.}
-      \end{cvitems}
-    }
+\input{resume/experience/paycom-senior}%
 
-%---------------------------------------------------------
-  \cventry
-    {Software Developer} % Job title
-    {Paycom} % Organization
-    {Oklahoma City, OK / Remote} % Location
-    {Oct 2022 - Feb 2025} % Date(s)
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item{Lead migration of C\# microservice from .Net Framework to .Net Standard for containerization, involving over 300 controllers or services and 1,000 unit tests.}
-        \item{Designed a new employee tutorial feature including MySQL tables for C\# services in containers and React.js views.}
-        \item {Transformed legacy employee website from Angular.js and PHP to React.js, PHP, and C\#, catering to desktop and mobile views.}
-        \item{Collaborated in a cross-functional team with product owners, QA, and customer relations, utilizing Jira and Confluence in Agile and Scrumban methodologies.}
-        \item {Handled maintenance and development of legacy system, addressing 75+ customer-facing bugs and security vulnerabilities using PHP, Angular.js, HTML, CSS, and Javascript.}
-        \item {Delivered code presentations and conducted code reviews on GitLab.}
-      \end{cvitems}
-    }
+\input{resume/experience/paycom-developer}%
 
-%---------------------------------------------------------
-%  \cventry
-%    {Software Consultant / Freelance} % Job title
-%    {Big Ol' Bear Consulting LLC} % Organization
-%    {Stillwater, OK} % Location
-%    {Oct 2023 - Current} % Date(s)
-%    {
-%    \begin{cvitems} % Description(s) of tasks/responsibilities
-%      \item{Evaluated core functionality requirements, and wrote a process improvement document with 3 separate solutions to the company's internal pipeline to help with accuracy and pipeline run time.}
-%      \end{cvitems}
-%    }
+%\input{resume/experience/big-ol-bear}%
 
-%---------------------------------------------------------
-  \cventry
-    {Backend Software Engineer} % Job title
-    {Sift} % Organization
-    {United States, Remote} % Location
-    {Aug 2021 - Jul 2022} % Date(s)
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Architected new Data Warehouse according to Data Vault 2.0 Schema for Dispute management product using cloud-based Snowflake and GCP hosted Apache Airflow ETL Pipeline to fit new Schema.}
-        \item {Integrated HashiCorp Vault authentication into Flyway process to remove plaintext secrets from our Data Warehouse management process.}
-      \end{cvitems}
-    }
+\input{resume/experience/sift-backend}%
 
-%---------------------------------------------------------
-  \cventry
-    {Software Engineering Intern} % Job title
-    {Sift} % Organization
-    {United States, Remote} % Location
-    {Jun 2021 - Aug 2021} % Date(s)
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities 
-      % 
-        \item {Designed and implemented weekly data privacy pipeline using Python, Apache Airflow and Dropbox's API General Data Protection Regulation (GDPR) Right to Access (RTA) and Right to Object (RTO) processes, which saved hours of weekly engineer time and ensured Sift met GDPR SLAs for RTA requests}
-        \item {Optimized GDPR churned customer pipeline by restructuring Airflow DAG to reduce average weekly runtime by 30\%}
-      \end{cvitems}
-    }
-
-%---------------------------------------------------------
+\input{resume/experience/sift-intern}%
 \end{cventries}
