@@ -12,15 +12,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Compile LaTeX
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: resume.tex
-          latexmk_use_xelatex: true
-          texlive_version: 2025
+      - name: Install localleaf
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/loiccoyle/localleaf/main/localleaf \
+            -o /usr/local/bin/localleaf
+          chmod +x /usr/local/bin/localleaf
+
+      - name: Compile LaTeX with localleaf
+        run: |
+          script -qec "localleaf . -m resume.tex -e xelatex -1 -- --outdir=build/" /dev/null
 
       - name: Rename PDF
-        run: mv resume.pdf caleb_cunningham_resume.pdf
+        run: mv build/resume.pdf caleb_cunningham_resume.pdf
 
       - name: Get next version
         id: version
