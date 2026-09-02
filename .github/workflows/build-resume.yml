@@ -25,6 +25,9 @@ jobs:
         run: |
           script -qec "localleaf -m resume.tex -e xelatex -i docker.io/loiccoyle/localleaf:latest -1 . -- --outdir=build/" /dev/null
 
+      - name: Fix build output ownership
+        run: sudo chown -R "$USER":"$USER" build/
+
       - name: Rename PDF
         run: mv build/resume.pdf caleb_cunningham_resume.pdf
 
